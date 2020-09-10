@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion à l'administration</title>
+
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script> 
+        <link rel="stylesheet" href="/css/app.css">        
+
+<style>
+body{
+    display: flex;
+    fustify-content: 100vh;
+}
+.card{
+    margin-top: 10%;
+}
+</style>
+</head>
+<body>
+    <div class="col-md-6">
+        <div class="card-bg-ligth">
+            <div class="card-header">
+                <h4 class="card-title">
+                    Connexion al'administration
+                </h4>
+            </div>
+            <div class="card-body">
+
+                {% if hasError %}
+                    <div class="alert-alert-warning">
+                        <p>les informations que voua avez fournies ne sont pas bonnes.</p>
+                    </div>                                  
+                {% endif %}
+                <form method="post">
+                    <div class="form-group"><label for="_username">Email</label><input type="text" class="form-control" placeholder="Adresse email..." name="_username" value="{{username}}"></div>
+                    <div class="form-group"><label for="_password">mot de pass</label><input type="password" class="form-control" placeholder="password ..." name="_password"></div>
+                    <button type="submit" class="btn btn-primary">
+                        Connexion !
+                    </button>
+                    <a href="{{path('home')}}" class="btn btn-link">
+                        Retour au site
+                    </a>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

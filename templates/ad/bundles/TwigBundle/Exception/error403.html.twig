@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Vous n'avez pas le doit d'accéder à cette page{% endblock %}
+
+{% block body %}
+
+    <h1> Vous n'avez pas le doit d'accéder à cette page! </h1>
+
+        <a href="{{ path('home') }}" class="btn btn-primary">Retour à l'accueil</a>
+        <a href="{{ path('ads_index') }}" class="btn btn-success">Nos annonces</a>
+
+{% endblock %}
